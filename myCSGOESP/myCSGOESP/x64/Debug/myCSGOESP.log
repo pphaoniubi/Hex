@@ -1,0 +1,3 @@
+﻿  dllmain.cpp
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\dllmain.cpp(31,29): warning C4244: '=': conversion from 'uintptr_t' to 'float', possible loss of data
+  myCSGOESP.vcxproj -> C:\Users\Administrator\Desktop\myCSGOESP\x64\Debug\myCSGOESP.dll
