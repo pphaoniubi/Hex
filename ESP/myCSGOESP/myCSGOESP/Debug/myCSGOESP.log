@@ -1,0 +1,2 @@
+﻿dllmain.obj : error LNK2019: unresolved external symbol "public: void __thiscall Hack::noRecoil(struct Vec3 *,int *,struct Vec3,struct Vec3 *)" (?noRecoil@Hack@@QAEXPAUVec3@@PAHU2@0@Z) referenced in function "void __stdcall hkEndScene(struct IDirect3DDevice9 *)" (?hkEndScene@@YGXPAUIDirect3DDevice9@@@Z)
+C:\Users\Administrator\Desktop\myCSGOESP\Debug\myCSGOESP.dll : fatal error LNK1120: 1 unresolved externals
