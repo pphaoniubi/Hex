@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @pphaoniubi
-- 👀 I’m interested in backend development
-- 🌱 I’m currently learning Software Engineering
+- 👀 I’m interested in C++/ Internet of things, 
+- 🌱 I’m currently learning Reverse Engineering
 - 📫 I can be reached by email: pphaoniubi@gmail.com
 
 <!---
