@@ -105,6 +105,22 @@ bool ManualMap(HANDLE hProc, const char * szDllFile){
 
 	//start mapping here
 	auto* pSectionHeader = IMAGE_FIRST_SECTION(pOldNtHeader);
+	
+	//loop all the sections 
+	for (UINT i = 0; i != pOldFileHeader->NumberOfSections; ++i, ++pSectionHeader) {
+
+		if (pSectionHeader->SizeOfRawData) {
+			
+			if (!WriteProcessMemory(hProc, pTargetBase + pSectionHeader->VirtualAddress, pSrcData + pSectionHeader->PointerToRawData,
+				pSectionHeader->SizeOfRawData, nullptr)) {
+
+				printf("Can't map sections:  %X\n", GetLastError()); 
+				delete[] pSrcData;
+				VirtualFreeEx(hProc, pTargetBase, 0, MEM_RELEASE);			//MEM_RELEASE has to have a size of zero
+				return false;
+			}
+		}
+	}
 
 
 }
