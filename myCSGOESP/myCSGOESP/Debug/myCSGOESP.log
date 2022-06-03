@@ -1,2 +1,9 @@
-﻿dllmain.obj : error LNK2019: unresolved external symbol "public: void __thiscall Hack::noRecoil(struct Vec3 *,int *,struct Vec3,struct Vec3 *)" (?noRecoil@Hack@@QAEXPAUVec3@@PAHU2@0@Z) referenced in function "void __stdcall hkEndScene(struct IDirect3DDevice9 *)" (?hkEndScene@@YGXPAUIDirect3DDevice9@@@Z)
-C:\Users\Administrator\Desktop\myCSGOESP\Debug\myCSGOESP.dll : fatal error LNK1120: 1 unresolved externals
+﻿  hack.cpp
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(75,12): warning C4099: 'Ent': type name first seen using 'class' now seen using 'struct'
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(117,17): error C3861: 'GetEnt': identifier not found
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(131,33): error C2039: 'GetDistance': is not a member of 'Ent'
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(144,9): error C3861: 'GetEnt': identifier not found
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(155,27): error C2039: 'GetBonePos': is not a member of 'Ent'
+C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'

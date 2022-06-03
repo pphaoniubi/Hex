@@ -24,7 +24,7 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
 
     //draw here
     //looping entList
-    for (int i = 2; i < 32; i++) {
+    for (int i = 1; i < 32; i++) {
         Ent* curEnt = hack->entList->ents[i].ent;
 
 
@@ -43,7 +43,7 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
 
 
         
-        Vec3 entHead3D = hack->GetBonePos(curEnt, 8);  //might different  //might not be getting the head pos 
+        Vec3 entHead3D = hack->GetBonePos(curEnt, 8);   //might not be getting the head pos 
         Vec2 entPos2D, entHead2D;
     
 
@@ -52,9 +52,15 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
         
         if (hack->localEnt->iTeamNum != curEnt->iTeamNum) {
 
+            
 
-            if (hack->WorldToScreen(curEnt->vecOrigin, entPos2D) && hack->WorldToScreen(entHead3D, entHead2D)) 
-                DrawESPBox2D(entPos2D, entHead2D, 2, color);
+        if (hack->WorldToScreen(curEnt->vecOrigin, entPos2D) && hack->WorldToScreen(entHead3D, entHead2D)) {
+
+            DrawLine(entPos2D.x, entPos2D.y, windowWidth / 2, windowHeight, 2, color);
+            DrawESPBox2D(entPos2D, entHead2D, 2, color);
+
+        }
+                
               
         }
        
@@ -77,9 +83,6 @@ void APIENTRY hkEndScene(LPDIRECT3DDEVICE9 o_pDevice) {
     DrawLine(l, r, 2, D3DCOLOR_ARGB(255, 0, 255, 0));
     DrawLine(t, b, 2, D3DCOLOR_ARGB(255,0, 255, 0));
 
-
-    //norecoil
-    hack->noRecoil(hack->aimPunchAngleNoRecoil, hack->iShotsFired, hack->oPunch, hack->viewAngles);         //causes unresolved external
 
 
     // call og function
@@ -111,8 +114,10 @@ DWORD WINAPI HackThread(HMODULE hModule) {
 
         hack->Update();
        
+        //norecoil
+        //hack->noRecoil();         //causes unresolved external
 
-        Vec3 punchAngle = hack->localEnt->aimPunchAngle;
+       Vec3 punchAngle = hack->localEnt->aimPunchAngle;
 
         hack->crosshair2D.x = windowWidth / 2 - (windowWidth / 90 * punchAngle.y);
         hack->crosshair2D.y = windowWidth / 2 - (windowWidth / 90 * punchAngle.x);
@@ -138,7 +143,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
                        LPVOID lpReserved
                      )
 {
-    std::cout << hack->localEnt->iTeamNum;
 
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
 
@@ -147,6 +151,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
   
     return TRUE;
 }
+
 
 
 

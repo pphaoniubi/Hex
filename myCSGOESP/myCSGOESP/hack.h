@@ -87,15 +87,15 @@ public:
 
 class Hack {
 public:
-	uintptr_t dwEntList = 0x4DD343C;
-	uintptr_t dwViewMatrix = 0x4DC4D64;			
-	//uintptr_t radarBase = 0x52081D4;
+	uintptr_t dwEntList = 0x4DD7B1C;
+	uintptr_t dwViewMatrix = 0x4DC9434;
 	uintptr_t engineModule;	
 	uintptr_t moduleBase;
-	uintptr_t dwClientState = 0x58CFBC;
+	uintptr_t dwClientState = 0x58BFDC;
 	uintptr_t dwClientState_viewAngles = 0x4D90;
 	uintptr_t m_iShotsFired = 0x103E0;
 	uintptr_t m_aimPunchAngle = 0x303C;
+	uintptr_t dwlocalPlayer = 0xDBB5CC;
 
 
 
@@ -117,9 +117,16 @@ public:
 
 	bool WorldToScreen(Vec3 pos, Vec2& screen);
 	Vec3 GetBonePos(Ent* ent, int bone);
+	
+	void noRecoil();
 
-	void noRecoil(Vec3* aimPunchAngleNoRecoil, int* iShotsFired, Vec3 oPunch, Vec3* viewAngles);
-
-
+	void Run();
+	void AimAt(Vec3* target);
+	float GetDistance(Vec3*);
+	
+	
+	Ent* GetClosestEnt();
 
 };
+
+

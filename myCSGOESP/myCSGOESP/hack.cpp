@@ -1,5 +1,6 @@
 #include "include.h"
 
+typedef __int32 uint32_t;
 
 void Hack::Init() {
 
@@ -7,14 +8,11 @@ void Hack::Init() {
 	engineModule = (uintptr_t)GetModuleHandle(L"engine.dll");
 
 	entList = (EntList*)(moduleBase + dwEntList);
-	localEnt = (Ent*)(entList + 0x10);
+	localEnt = (Ent*)(moduleBase + dwlocalPlayer);
 	viewAngles = (Vec3*)(*(uintptr_t*)(engineModule + dwClientState) + dwClientState_viewAngles);
 
 	iShotsFired = (int*)(localEnt + m_iShotsFired);
 	aimPunchAngleNoRecoil = (Vec3*)(localEnt + m_aimPunchAngle);
-
-
-
 
 
 }
@@ -76,6 +74,7 @@ bool Hack::WorldToScreen(Vec3 pos, Vec2& screen) {
 
 }
 
+
 Vec3 Hack:: GetBonePos(Ent* ent, int bone) {
 
 	uintptr_t bonePtr = ent->boneMatrix;
@@ -87,7 +86,10 @@ Vec3 Hack:: GetBonePos(Ent* ent, int bone) {
 	return bonePos;
 
 }
-void noRecoil(Vec3* aimPunchAngleNoRecoil, int* iShotsFired, Vec3 oPunch, Vec3* viewAngles) {
+
+
+
+void Hack:: noRecoil() {
 
 	Vec3 punchAngle = *aimPunchAngleNoRecoil * 2;
 	if (*iShotsFired > 1) {
@@ -102,3 +104,54 @@ void noRecoil(Vec3* aimPunchAngleNoRecoil, int* iShotsFired, Vec3 oPunch, Vec3* 
 	oPunch = punchAngle;
 }
 
+
+Ent* Hack::GetClosestEnt() {
+
+	float closestDistance = 1000000;
+	int closestDistanceIndex = -1;
+	EntList* entList;
+
+
+	for (int i = 1; i < 32; i++) {			//hard coding max player, losing performance
+
+		Ent* curEnt = GetEnt(i);
+
+		if (!curEnt || !(*(uint32_t*)curEnt) || (uint32_t)curEnt == (uint32_t)localEnt) {
+			continue;
+		}
+
+		if (curEnt->iTeamNum == localEnt->iTeamNum) {
+			continue;
+		}
+
+		if (curEnt->iHealth < 1 || localEnt->iHealth < 1) {
+			continue;
+		}
+
+		float curDistance = localEnt->GetDistance(curEnt->vecOrigin);
+
+		if (curDistance < closestDistance) {
+			closestDistance = curDistance;
+			closestDistanceIndex = i;
+		}
+
+	}
+
+	if (closestDistanceIndex == -1) {
+		return NULL;
+	}
+
+	return GetEnt(closestDistanceIndex);
+
+
+}
+
+void Hack::Run() {
+
+	Ent* closestEnt = GetClosestEnt();
+
+	if (closestEnt) {
+
+		Hack::AimAt(closestEnt->GetBonePos(8));
+	}
+}
