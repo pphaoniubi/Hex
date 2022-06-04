@@ -146,7 +146,7 @@ Ent* Hack::GetClosestEnt() {
 
 }
 
-
+const double PI = 3.1415926;
 void Hack::AimAt(Vec3* target) {
 
 	static uint32_t engineModule = (uint32_t)GetModuleHandle(L"engine.dll");
@@ -157,6 +157,25 @@ void Hack::AimAt(Vec3* target) {
 	Vec3* myPos = &(origin + viewOffset);					//??????
 
 
+	Vec3* deltaVec; 
+	deltaVec->x = target->x - myPos->x; 
+	deltaVec->y = target->y - myPos->y; 
+	deltaVec->z = target->z - myPos->z;					//substracting enemy head and our head
+
+
+	float deltaVecLength = sqrt(deltaVec->x * deltaVec->x + deltaVec->y * deltaVec->y + deltaVec->z * deltaVec->z);
+	//get the length of the hypotenus
+
+	float pitch = -asin(deltaVec->z / deltaVecLength) * (180/ PI);			//converting to deg
+	float yaw = atan2(deltaVec->y, deltaVec->x) * (180/PI);
+
+
+	if (pitch >= -89 && pitch <= 89 && yaw >= -180 && yaw <= 180) {
+		viewAngles->x = pitch;
+		viewAngles->y = yaw;
+	}
+
+
 }
 void Hack::Run() {
 
@@ -165,6 +184,6 @@ void Hack::Run() {
 	if (closestEnt) {
 
 		Hack::AimAt(closestEnt->GetBonePos(8));
-	
+	 
 	}
 }

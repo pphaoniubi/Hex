@@ -1,9 +1,13 @@
-﻿  hack.cpp
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(75,12): warning C4099: 'Ent': type name first seen using 'class' now seen using 'struct'
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(117,17): error C3861: 'GetEnt': identifier not found
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(131,33): error C2039: 'GetDistance': is not a member of 'Ent'
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(144,9): error C3861: 'GetEnt': identifier not found
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.cpp(155,27): error C2039: 'GetBonePos': is not a member of 'Ent'
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\hack.h(50): message : see declaration of 'Ent'
+﻿  D3D9.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\D3D9.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  dllmain.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\include.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  draw.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\include.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  dx.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\include.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  hack.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\include.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  hook.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\include.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  Generating Code...
