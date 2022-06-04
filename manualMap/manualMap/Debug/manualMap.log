@@ -1,12 +1,12 @@
 ﻿  Inject.cpp
   main.cpp
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(21,10): warning C4473: 'printf' : not enough arguments passed for format string
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(21,10): message : placeholders and their parameters expect 1 variadic arguments, but 0 were provided
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(21,10): message : the missing variadic argument 1 is required by format string '%X'
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(47,10): warning C4473: 'printf' : not enough arguments passed for format string
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(47,10): message : placeholders and their parameters expect 1 variadic arguments, but 0 were provided
-C:\Users\Administrator\Desktop\manualMap\manualMap\main.cpp(47,10): message : the missing variadic argument 1 is required by format string '%X'
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(21,10): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(21,10): message : placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(21,10): message : the missing variadic argument 1 is required by format string '%X'
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(47,10): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(47,10): message : placeholders and their parameters expect 1 variadic arguments, but 0 were provided
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\main.cpp(47,10): message : the missing variadic argument 1 is required by format string '%X'
   Generating Code...
-C:\Users\Administrator\Desktop\manualMap\manualMap\Inject.cpp(96): warning C4715: 'ManualMap': not all control paths return a value
+C:\Users\Lenovo\Desktop\Hex\manualMap\manualMap\Inject.cpp(124): warning C4715: 'ManualMap': not all control paths return a value
 Inject.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
-  manualMap.vcxproj -> C:\Users\Administrator\Desktop\manualMap\Debug\manualMap.exe
+  manualMap.vcxproj -> C:\Users\Lenovo\Desktop\Hex\manualMap\Debug\manualMap.exe

@@ -75,7 +75,7 @@ bool Hack::WorldToScreen(Vec3 pos, Vec2& screen) {
 }
 
 
-Vec3 Hack:: GetBonePos(Ent* ent, int bone) {
+Vec3 Hack::GetBonePos(Ent* ent, int bone) {
 
 	uintptr_t bonePtr = ent->boneMatrix;
 	Vec3 bonePos;
@@ -89,7 +89,7 @@ Vec3 Hack:: GetBonePos(Ent* ent, int bone) {
 
 
 
-void Hack:: noRecoil() {
+void Hack::noRecoil() {
 
 	Vec3 punchAngle = *aimPunchAngleNoRecoil * 2;
 	if (*iShotsFired > 1) {
@@ -146,6 +146,18 @@ Ent* Hack::GetClosestEnt() {
 
 }
 
+
+void Hack::AimAt(Vec3* target) {
+
+	static uint32_t engineModule = (uint32_t)GetModuleHandle(L"engine.dll");
+	static Vec3* viewAngles = (Vec3*)(*(uint32_t*)(engineModule + dwClientState) + dwClientState_viewAngles);
+
+	Vec3 origin = *GetOrigin();
+	Vec3 viewOffset = *(Vec3*)this.vecOrigin;
+	Vec3* myPos = &(origin + viewOffset);					//??????
+
+
+}
 void Hack::Run() {
 
 	Ent* closestEnt = GetClosestEnt();
@@ -153,5 +165,6 @@ void Hack::Run() {
 	if (closestEnt) {
 
 		Hack::AimAt(closestEnt->GetBonePos(8));
+	
 	}
 }

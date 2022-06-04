@@ -121,6 +121,4 @@ bool ManualMap(HANDLE hProc, const char * szDllFile){
 			}
 		}
 	}
-
-
 }

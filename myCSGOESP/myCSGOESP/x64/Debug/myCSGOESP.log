@@ -1,3 +1,13 @@
-﻿  dllmain.cpp
-C:\Users\Administrator\Desktop\myCSGOESP\myCSGOESP\dllmain.cpp(31,29): warning C4244: '=': conversion from 'uintptr_t' to 'float', possible loss of data
-  myCSGOESP.vcxproj -> C:\Users\Administrator\Desktop\myCSGOESP\x64\Debug\myCSGOESP.dll
+﻿  D3D9.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\D3D9.h(7,10): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+  dllmain.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\dllmain.cpp(158,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  draw.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\draw.cpp(53,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  dx.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\dx.cpp(99,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  hack.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\hack.cpp(171,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  hook.cpp
+C:\Users\Lenovo\Desktop\Hex\myCSGOESP\myCSGOESP\hook.cpp(59,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Generating Code...
